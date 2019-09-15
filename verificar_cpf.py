@@ -1,0 +1,1 @@
+cpf = input('digite cpf: ')
