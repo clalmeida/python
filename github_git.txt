@@ -1,1 +1,2 @@
 Teste arquivo do repositório github para o git.
+verificação de problema firewall
