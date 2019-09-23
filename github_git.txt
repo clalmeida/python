@@ -1,2 +1,16 @@
 Teste arquivo do repositório github para o git.
 verificação de problema firewall
+
+Sub test()
+Dim j As Long, r As Range
+j = InputBox("digite o número de linhas a ser inserido")
+
+Set r = Range("A2")
+Do
+Range(r.Offset(1, 0), r.Offset(j, 0)).EntireRow.Insert
+Set r = Cells(r.Row + j + 1, 1)
+'MsgBox r.Address(o apóstrofo no início desta linha torna esta linha inoperável)
+If r.Offset(1, 0) = "" Then Exit Do
+Loop
+
+End Sub
