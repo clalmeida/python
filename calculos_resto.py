@@ -5,3 +5,4 @@ z = y//x
 t = x//y
 a = y%x
 b = x%y
+Z1 = 1
