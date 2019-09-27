@@ -1,0 +1,22 @@
+n = 90
+v = [] #declaração do vetor vazio
+#i assume o valor de n
+for i in range(n,n+3): #n + 3 pois já temos dois append
+    v.append(i)  #acrescenta o valor no final do vetor  
+    v.append(i*10) 
+
+ordenado = "nao"
+tamanho = len(v)
+while ordenado == "nao":
+    ordenado = "sim"
+    for i in range(0,tamanho -1):
+        j = i + 1
+        while j < tamanho:
+            if v[i] > v[j]:
+                ordenado = "nao"
+                troca = v[i]
+                v[i] = v[j]
+                v[j] = troca
+            j = j+1
+
+print(v)
