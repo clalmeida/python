@@ -1,0 +1,35 @@
+letravalida = ("ABCDEFGHIJ")
+senha = input("digite a senha: ")
+novasenha = ""
+posicao = 0
+tamanho = len(senha)
+while posicao<tamanho:
+    letra=senha[posicao]
+    resultado = letravalida.find(letra)
+    if resultado >-1 and tamanho>5:
+        posicao = posicao+1
+        if letra == ("A"):
+            letra = ("@")
+        if letra ==("B"):
+            letra = (">")
+        if letra == ("C"):
+            letra = ("Ç")
+        if letra == ("D"):
+            letra = ("4")
+        if letra == ("E"):
+            letra = ("3")
+        if letra == ("F"):
+            letra = ("\\")
+        if letra == ("G"):
+            letra = ("]")
+        if letra == ("H"):
+            letra = ("?")
+        if letra == ("I"):
+            letra = ("{")
+        if letra == ("J"):
+            letra = ("+")
+        novasenha=novasenha+letra
+    else:
+        print("senha inválida")
+        posicao = tamanho
+print("nova senha = ",novasenha)
