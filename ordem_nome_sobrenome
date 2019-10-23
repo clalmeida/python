@@ -1,0 +1,76 @@
+nome = []
+idade = []
+sexo= []
+ordem_nome = []
+ordem_idade = []
+ordem_sexo = []
+nome_func = input("digite o nome: ")
+while nome_func != 'FIM':
+    if len(nome_func) > 6:
+        branco = nome_func.find(" ")
+        if branco>-1:
+            if branco>2:
+                cont = len(nome_func)-branco+1
+                if cont > 3:
+                    nome.append(nome_func)
+                    idade_func = int(input("digite idade: "))
+                    sexo_func = input("digite sexo: ")
+                    idade.append(idade_func)
+                    sexo.append(sexo_func)
+    nome_func = input("digite o nome: ")
+ordem_nome = nome.copy()
+ordem_idade = idade.copy()
+ordem_sexo = sexo.copy()
+for i in range(len(ordem_nome)):
+    for j in range(i,len(ordem_nome)):
+        if ordem_nome[i]>ordem_nome[j]:
+            #troca nome
+            trocanome = ordem_nome[i]
+            ordem_nome[i] = ordem_nome[j]
+            ordem_nome[j]=trocanome
+            #troca idade:
+            trocaidade = ordem_idade[i]
+            ordem_idade[i] = ordem_idade[j]
+            ordem_idade[j] = trocaidade
+            #troca sexo:
+            trocasexo = ordem_sexo[i]
+            ordem_sexo[i] = ordem_sexo[j]
+            ordem_sexo[j] = trocasexo
+
+
+#2- O programa deve calcular a idade média dos homens, a idade média das mulheres, a
+# idade média geral de todos os funcionários e mostrar estes resultados no final.(NÃO SEI)
+
+media_geral = sum(ordem_idade)/len(ordem_idade)
+print("A média geral de idade é: ", media_geral)
+
+
+# 3- O programa deve mostrar quantos homens e quantas mulheres trabalham na empresa.
+
+total_homens = ordem_sexo.count("M")
+print("O total de homens é: ",total_homens)
+total_mulheres = (len(ordem_sexo)- total_homens)
+print("O total de mulheres é: ", total_mulheres)
+
+# 4- O programa deve mostrar o nome, sobrenome e a idade da mulher mais jovem, o nome,
+# sobrenome e a idade da mulher mais velha, o nome, sobrenome e a idade do homem mais
+# jovem e o nome, sobrenome e a idade do homem mais velho.
+
+# 5- O programa deve mostrar os nomes, sobrenomes e idade dos funcionários mais velhos
+# que a idade média geral da empresa.
+
+# 6- O programa deve mostrar os dados recebidos na ordem original e após a ordenação. (resolvido)
+
+print("DADOS ORIGINAIS: ")
+for i in range(len(nome)):
+    print(nome[i],",",idade[i],",",sexo[i])
+    
+print("DADOS ORDENADOS: ")
+for i in range(len(ordem_nome)):
+    print(ordem_nome[i],",", ordem_idade[i],",", ordem_sexo[i])
+
+# 7- O programa deve mostrar os nomes das pessoas com o mesmo sobrenome. Usando os
+# dados do exemplo acima, o programa deve mostrar:
+# Borges
+# Abel
+# Jorgina
