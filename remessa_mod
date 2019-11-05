@@ -1,0 +1,99 @@
+# modelMatricula = []
+# modelNome = []
+# modelSalario = []
+# modelDpto = []
+# modelBanco = []
+# modelAgencia = []
+# modelConta = []
+
+# ############################################
+# # Template
+
+# # - tMatricula
+# # - tNome
+# # - tSalario
+# # - tDepto
+# # - tBanco 
+# # - tAgencia
+# # - tConta 
+
+# tMatricula = "000000"
+# tNome = "                                            "
+# tSalario = "0000000000"
+# tDpto = "           "
+# tBanco = "     "
+# tAgencia = "      "
+# tConta = "          "
+# print(len(tNome))
+# print(len(tDpto))
+# print(len(tBanco))
+# print(len(tAgencia))
+# print(len(tConta))
+# #########################################
+# # Main
+# # Entrada de Dados
+# # firm
+# while True:#fim!='subnie':
+#     matricula = input('[?] digite matricula: ')
+#     nome = input('[?] digite nome: ')
+#     salario = input('[?] digite salario: ')
+#     dpto = input('[?] digite departamento: ')
+#     banco = input('[?] digite banco: ')
+#     agencia = input('[?] digite agencia: ')
+#     conta = input('[?] digite conta: ')
+#         # Guardar Dados no vetor 
+
+#     # modelMatricula.append(matricula)
+#     # modelNome.append(nome)
+#     # modelSalario.append(salario)
+#     # modelDpto.append(dpto) 
+#     # modelBanco.append(banco)
+#     # modelAgencia.append(agencia)
+#     # modelConta.append(conta)
+
+#     # Finalizou Entradas
+
+
+#         # Limitar o tamanho conforme o template
+#     # matricula = modelMatricula[0][0:len(tMatricula)]
+#     # nome = modelNome[0][0:len(tNome)]
+#     # salario = modelSalario[0][0:len(tSalario)]
+#     # dpto = modelDpto[0][0:len(tDpto)]
+#     # banco = modelBanco[0][0:len(tBanco)]
+#     # agencia = modelAgencia[0][0:len(tAgencia)]
+#     # conta = modelConta[0][0:len(tConta)]
+#     matricula = matricula[0:len(tMatricula)]
+#     nome = nome[0:len(tNome)]
+#     salario = salario[0:len(tSalario)]
+#     dpto = dpto[0:len(tDpto)]
+#     banco = banco[0:len(tBanco)]
+#     agencia = agencia[0:len(tAgencia)]
+#     conta = conta[0:len(tConta)]
+
+#         # Adiconar caracteres faltantes
+#     matricula = matricula + tMatricula[0:len(tMatricula) - len(matricula)]
+#     nome = nome + tNome[0:len(tNome) - len(nome)]
+#     salario = tSalario[0:len(tSalario) - len(salario)] + salario
+#     dpto = dpto + tDpto[0:len(tDpto) - len(dpto)]
+#     banco = banco + tBanco[0:len(tBanco) - len(banco)]
+#     agencia = agencia + tAgencia[0:len(tAgencia) - len(agencia)]
+#     conta = conta + tConta[0:len(tConta) - len(conta)]
+        
+#         # Mostrar remessa
+
+#     linha = matricula + nome + salario + dpto + banco + agencia + conta
+
+#     print(linha)
+
+#     with open('arquivo.txt', 'a', encoding='utf-8') as f:
+#         f.write(linha + '\n')
+    
+#     fim = input('Terminar execução? ')
+#     if fim == 'sim': break
+    
+
+a = None
+with open('arquivo.txt', 'r', encoding='utf-8') as f:
+    a = f.readlines()
+
+print(a[1])
