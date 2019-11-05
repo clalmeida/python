@@ -1,0 +1,117 @@
+############################################
+# Globais
+final = 2
+
+
+############################################
+# Estrutura
+
+# - modelMatricula
+# - modelNome
+# - modelSalario
+# - modelDepto
+# - modelBanco 
+# - modelAgencia
+# - modelConta 
+
+
+modelMatricula = []
+modelNome = []
+modelSalario = []
+modelDpto = []
+modelBanco = []
+modelAgencia = []
+modelConta = []
+
+############################################
+# Template
+
+# - tMatricula
+# - tNome
+# - tSalario
+# - tDepto
+# - tBanco 
+# - tAgencia
+# - tConta 
+
+tMatricula = "000000"
+tNome = "                                            "
+tSalario = "0000000000"
+tDpto = "           "
+tBanco = "     "
+tAgencia = "      "
+tConta = "          "
+
+#########################################
+# Main
+
+for index in range(0,final):
+    # Entrada de Dados
+    matricula = input('[?] digite matricula: ')
+    nome = input('[?] digite nome: ')
+    salario = input('[?] digite salario: ')
+    dpto = input('[?] digite departamento: ')
+    banco = input('[?] digite banco: ')
+    agencia = input('[?] digite agencia: ')
+    conta = input('[?] digite conta: ')
+
+    # Guardar Dados no vetor 
+
+    modelMatricula.append(matricula)
+    modelNome.append(nome)
+    modelSalario.append(salario)
+    modelDpto.append(dpto) 
+    modelBanco.append(banco)
+    modelAgencia.append(agencia)
+    modelConta.append(conta)
+
+ 
+# Finalizou Entradas
+print ("\n[!] FEITO.")
+
+for index in range(0, final):
+
+    print ("\n[!] Matricula: ", modelMatricula[index])
+    print ("[!] Nome: ", modelNome[index])
+    print ("[!] Salario: ", modelSalario[index])
+    print ("[!] Departamento: ", modelDpto[index])
+    print ("[!] Banco: ", modelBanco[index])
+    print ("[!] Agencia: ", modelAgencia[index])
+    print ("[!] Conta: ", modelConta[index])
+
+print ("\n[!] [", final, "] carregados!\n")
+
+file = open("dados.txt","a", encoding='utf-8')
+
+for index in range(0, final):
+    
+    # Limitar o tamanho conforme o template
+    matricula = modelMatricula[index][0:len(tMatricula)]
+    nome = modelNome[index][0:len(tNome)]
+    salario = modelSalario[index][0:len(tSalario)]
+    dpto = modelDpto[index][0:len(tDpto)]
+    banco = modelBanco[index][0:len(tBanco)]
+    agencia = modelAgencia[index][0:len(tAgencia)]
+    conta = modelConta[index][0:len(tConta)]
+
+    # Adiconar caracteres faltantes
+    matricula = matricula + tMatricula[0:len(tMatricula) - len(matricula)]
+    nome = nome + tNome[0:len(tNome) - len(nome)]
+    salario = tSalario[0:len(tSalario) - len(salario)] + salario
+    dpto = dpto + tDpto[0:len(tDpto) - len(dpto)]
+    banco = banco + tBanco[0:len(tBanco) - len(banco)]
+    agencia = agencia + tAgencia[0:len(tAgencia) - len(agencia)]
+    conta = conta + tConta[0:len(tConta) - len(conta)]
+    
+    # Mostrar remessa
+
+    linha = matricula + nome + salario + dpto + banco + agencia + conta + '\n'
+
+    print("[!] Gravando >>> ", linha)
+    file.write(linha)
+    #file.append(linha)
+
+    
+    
+file.close() 
+print ("\n[!] programa finalizou!")
